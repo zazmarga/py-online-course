@@ -1,3 +1,3 @@
-# TODO: add initial code
-def hello_world():
-    return "Hello, world!"
+class OnlineCourse:
+    # write your code here
+    pass
