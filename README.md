@@ -14,7 +14,7 @@ Could you implement it for us?
 ```python
 course = OnlineCourse(
     name="Python Basics",
-    description="The best course to start learn Python",
+    description="The best course to start learning Python",
     weeks=2,
 )
 print(course.description)  # The best course to start learn Python
