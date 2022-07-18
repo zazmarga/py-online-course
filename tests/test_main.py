@@ -3,6 +3,10 @@ import pytest
 from app.main import OnlineCourse
 
 
+class OnlineClass(OnlineCourse):
+    pass
+
+
 @pytest.mark.parametrize(
     "name,description,weeks",
     [
@@ -104,6 +108,46 @@ def test_from_dict_method(dictionary, name, description, weeks):
     )
 
     assert course.weeks == weeks, (
+        f"Course should have 'weeks' equal to {weeks} "
+        f"when course is created with "
+        f"'OnlineCourse.from_dict({dictionary})'"
+    )
+
+
+@pytest.mark.parametrize(
+    "dictionary,name,description,weeks",
+    [
+        (
+            {
+                "name": "Python Basics",
+                "description": "The best course to start learning Python!",
+                "days": 13,
+            },
+            "Python Basics",
+            "The best course to start learning Python!",
+            2,
+        ),
+    ],
+)
+def test_should_return_cls_instance(dictionary, name, description, weeks):
+    online_class = OnlineClass.from_dict(dictionary)
+
+    assert (
+        online_class.__class__.__name__ == "OnlineClass"
+    ), "Method 'from_dict' should return 'cls' instance"
+    assert online_class.name == name, (
+        f"Course should have 'name' equal to {name} "
+        f"when course is created with "
+        f"'OnlineCourse.from_dict({dictionary})'"
+    )
+
+    assert online_class.description == description, (
+        f"Course should have 'description' equal to {description} "
+        f"when course is created with "
+        f"'OnlineCourse.from_dict({dictionary})'"
+    )
+
+    assert online_class.weeks == weeks, (
         f"Course should have 'weeks' equal to {weeks} "
         f"when course is created with "
         f"'OnlineCourse.from_dict({dictionary})'"
