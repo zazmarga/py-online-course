@@ -62,34 +62,34 @@ def test_days_to_weeks(days, weeks):
     "dictionary,name,description,weeks",
     [
         (
-                {
-                    "name": "Python Basics",
-                    "description": "The best course to start learning Python!",
-                    "days": 13,
-                },
-                "Python Basics",
-                "The best course to start learning Python!",
-                2,
+            {
+                "name": "Python Basics",
+                "description": "The best course to start learning Python!",
+                "days": 13,
+            },
+            "Python Basics",
+            "The best course to start learning Python!",
+            2,
         ),
         (
-                {
-                    "name": "Python Basics Extended",
-                    "description": "After this course you will know everything about Python data types",
-                    "days": 16,
-                },
-                "Python Basics Extended",
-                "After this course you will know everything about Python data types",
-                3,
+            {
+                "name": "Python Basics Extended",
+                "description": "After this course you will know everything about Python data types",
+                "days": 16,
+            },
+            "Python Basics Extended",
+            "After this course you will know everything about Python data types",
+            3,
         ),
         (
-                {
-                    "name": "Python Core",
-                    "description": "My favourite course",
-                    "days": 28,
-                },
-                "Python Core",
-                "My favourite course",
-                4,
+            {
+                "name": "Python Core",
+                "description": "My favourite course",
+                "days": 28,
+            },
+            "Python Core",
+            "My favourite course",
+            4,
         ),
     ],
 )
@@ -118,23 +118,23 @@ def test_from_dict_method(dictionary, name, description, weeks):
     "dictionary,name,description,weeks",
     [
         (
-                {
-                    "name": "Python Basics",
-                    "description": "The best course to start learning Python!",
-                    "days": 13,
-                },
-                "Python Basics",
-                "The best course to start learning Python!",
-                2,
+            {
+                "name": "Python Basics",
+                "description": "The best course to start learning Python!",
+                "days": 13,
+            },
+            "Python Basics",
+            "The best course to start learning Python!",
+            2,
         ),
     ],
 )
 def test_should_return_cls_instance(dictionary, name, description, weeks):
     online_class = OnlineClass.from_dict(dictionary)
 
-    assert online_class.__class__.__name__ == "OnlineClass", (
-        "Method 'from_dict' should return 'cls' instance"
-    )
+    assert (
+        online_class.__class__.__name__ == "OnlineClass"
+    ), "Method 'from_dict' should return 'cls' instance"
     assert online_class.name == name, (
         f"Course should have 'name' equal to {name} "
         f"when course is created with "
