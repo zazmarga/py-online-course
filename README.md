@@ -6,7 +6,7 @@ We want to create a website for finding the best online courses.
 In order to store information about courses, we need a new `OnlineCourse` class.
 Could you implement it for us?
 
-`OnlineCourse` constructor takes three arguments:
+`OnlineCourse` `__init__` method takes three arguments:
 * `name` - course name (should be stored in `self.name`)
 * `description` - course description (should be stored in `self.description`)
 * `weeks` - duration of the course in weeks (should be stored in `self.weeks`)
